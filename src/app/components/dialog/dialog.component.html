@@ -4,10 +4,8 @@
   <form [formGroup]="bookGroup" *ngIf="data.type !== 'delete'; else delete">
     <app-input-field [control]="title" label="Book Title"></app-input-field>
     <app-input-field [control]="PublishDate" label="Publish Year" [maxlength]="'4'"></app-input-field>
-    <app-input-field [control]="imageUrl" label="Image Url"
-      [hint]="'https://media.amazon.com/images/I/91I2ywLs1YL.jpg'"></app-input-field>
-    <app-input-field [control]="purchaseLink" label="Purchase Link"
-      [hint]="'https://amazon.com/BFG-Roald-Dahl/dp/0142410381'"></app-input-field>
+    <app-input-field [control]="imageUrl" label="Image Url" [hint]="'https://media.amazon.com/'"></app-input-field>
+    <app-input-field [control]="purchaseLink" label="Purchase Link" [hint]="'https://amazon.com/'"></app-input-field>
   </form>
   <ng-template #delete>
     <p>
