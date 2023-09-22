@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  Books Assignment
+</mat-toolbar>
+
+<div class="container" *ngIf="(data$ | async) as data">
+  <div class="author header flex-centered-wrap">
+    <div>
+      <p>Author</p>
+      <h1><strong>{{data.author}}</strong></h1>
+    </div>
+    <div class="details">
+      <p>Birthday: <strong>{{data.birthday}}</strong></p>
+      <p>Birth Place: <strong>{{data.birthPlace}}</strong></p>
+    </div>
+  </div>
+
+  <div class="list header flex-centered-wrap">
+    <div>
+      <h3>List of books by <strong>{{data.author}}</strong></h3>
+      <div class="flex-centered-wrap">
+        Sort By:
+        <mat-chip-listbox aria-label="Sort selection">
+          <mat-chip-option (click)="sortByTitle()">Title</mat-chip-option>
+          <mat-chip-option (click)="sortByDate()">Publish Date</mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+    </div>
+    <button mat-flat-button color="primary" (click)="addBook()">
+      <mat-icon> add_to_photos </mat-icon> Add Book
+    </button>
+  </div>
+
+  <div class="books-grid">
+    <app-book class="card" *ngFor="let book of (books$ | async)" [book]="book"></app-book>
+  </div>
+
+</div>

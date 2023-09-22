@@ -1,0 +1,77 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.flex-centered-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+h1,
+h3,
+p {
+  margin: 0;
+}
+
+.header {
+  padding: 10px;
+  background: #fefefe;
+  border-radius: 10px;
+  box-shadow: rgba(#673ab7, 0.3) 0 4px;
+  margin-bottom: 2rem;
+}
+
+.author {
+  .details {
+    text-align: right;
+  }
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+  justify-content: center;
+}
+
+.card {
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 400px;
+  display: grid;
+  grid-template-areas:
+    "cover cover cover cover"
+    "title title title details"
+    "modify modify delete delete";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto 35px;
+}
+
+@media only screen and (max-width: 600px) {
+  .author .details {
+    text-align: left;
+  }
+  .books-grid {
+    grid-template-columns: auto;
+    gap: 20px;
+  }
+  .card {
+    border-radius: 10px;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .books-grid {
+    // grid-template-columns: repeat(3, 1fr);
+
+    // INFO At this screen size 3 columns would look better.
+    // but as per requirement for only 2 columsn adjusting the gap accordingly
+    gap: 50px 100px;
+  }
+}

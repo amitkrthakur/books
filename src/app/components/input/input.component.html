@@ -1,0 +1,10 @@
+<mat-form-field>
+  <mat-label>{{label}} </mat-label>
+  <input matInput [formControl]="control" [maxlength]="maxlength">
+
+  <ng-container *ngIf="control && control.invalid" ngProjectAs="mat-error">
+    <mat-error *ngIf="control.hasError('required')"> {{label}} is <strong>required</strong> </mat-error>
+    <mat-error *ngIf="control.hasError('pattern')"> {{ label }} is <strong>invalid</strong> </mat-error>
+  </ng-container>
+  <mat-hint *ngIf="hint">{{hint}}</mat-hint>
+</mat-form-field>

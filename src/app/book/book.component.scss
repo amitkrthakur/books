@@ -1,0 +1,42 @@
+.cover-img {
+  grid-area: cover;
+  width: 100%;
+}
+.title,
+.details {
+  padding: 5px 10px;
+  align-self: center;
+}
+.title {
+  grid-area: title;
+}
+.details {
+  grid-area: details;
+  text-align: right;
+  span {
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+button {
+  border-radius: 0;
+}
+.modify-btn {
+  grid-area: modify;
+}
+.delete-btn {
+  grid-area: delete;
+}
+
+a {
+  text-decoration: none;
+  color: #673ab7;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1,
+p {
+  margin: 0;
+}

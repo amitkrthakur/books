@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>{{data.type | titlecase}} Book</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="bookGroup" *ngIf="data.type !== 'delete'; else delete">
+    <app-input-field [control]="title" label="Book Title"></app-input-field>
+    <app-input-field [control]="PublishDate" label="Publish Year" [maxlength]="'4'"></app-input-field>
+    <app-input-field [control]="imageUrl" label="Image Url"
+      [hint]="'https://media.amazon.com/images/I/91I2ywLs1YL.jpg'"></app-input-field>
+    <app-input-field [control]="purchaseLink" label="Purchase Link"
+      [hint]="'https://amazon.com/BFG-Roald-Dahl/dp/0142410381'"></app-input-field>
+  </form>
+  <ng-template #delete>
+    <p>
+      Are you sure you want to delete <strong>{{ data.book?.title }}</strong> ?
+    </p>
+  </ng-template>
+</div>
+<div mat-dialog-actions class="actions">
+  <button mat-flat-button *ngIf="data.type !== 'delete'" (click)="submit()" color="primary">
+    {{data.type | titlecase}} Book</button>
+  <button mat-flat-button *ngIf="data.type === 'delete'" [mat-dialog-close]="data.book?.id" color="warn">
+    Yes Delete</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+</div>
