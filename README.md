@@ -1,8 +1,10 @@
 # Books Assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+You can preview this project live at this [link](https://books-sv6a.onrender.com).
 
 This project is developed as per the assignment and requirements specified [here](https://github.com/Inspire-com/candidate-homework/blob/main/FE_Engineer.md)
+
+It was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
 ## Development server
 
